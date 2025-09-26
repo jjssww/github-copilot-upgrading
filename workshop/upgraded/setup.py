@@ -1,5 +1,9 @@
-import distribute_setup
-distribute_setup.use_setuptools()
+# NOTE: legacy `distribute_setup` bootstrap is removed for modern Python.
+# The original file used `distribute_setup.use_setuptools()` which tries to
+# download/build the old 'distribute' package and depends on `distutils`.
+# For current environments we rely on setuptools being available in the
+# environment (install with `pip install setuptools`), which avoids the
+# legacy bootstrapping logic.
 from setuptools import setup
 
 tests_require = ['pytest']

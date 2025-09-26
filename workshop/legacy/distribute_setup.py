@@ -456,7 +456,18 @@ def _extractall(self, path=".", members=None):
     for tarinfo in directories:
         dirpath = os.path.join(path, tarinfo.name)
         try:
-            self.chown(tarinfo, dirpath)
+            # TarFile.chown signature differs between Python versions.
+            # Some versions require a third 'numeric_owner' argument.
+            try:
+                self.chown(tarinfo, dirpath)
+            except TypeError:
+                try:
+                    # try with explicit numeric_owner (False)
+                    self.chown(tarinfo, dirpath, False)
+                except TypeError:
+                    # Could not call chown; ignore and continue.
+                    pass
+
             self.utime(tarinfo, dirpath)
             self.chmod(tarinfo, dirpath)
         except ExtractError:

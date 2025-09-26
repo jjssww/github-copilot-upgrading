@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: guachi
 Version: 0.0.6
 Summary: Global, persistent configurations as dictionaries
@@ -7,7 +7,6 @@ Author: Alfredo Deza
 Author-email: alfredodeza [at] gmail [dot] com
 License: MIT
 Keywords: configuration management persistent dictionaries dictionary parse map mapping
-Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
@@ -15,6 +14,14 @@ Classifier: Topic :: Software Development :: Build Tools
 Classifier: Programming Language :: Python :: 2.5
 Classifier: Programming Language :: Python :: 2.6
 Classifier: Programming Language :: Python :: 2.7
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: summary
 
 When projects start to grow, the need for a globally accessible configuration
 manager is obvious.
@@ -91,5 +98,3 @@ Documentation
 Our full Documentation is hosted here. Go take a look for the full API.
 
 http://guachi.googlecode.com/hg/docs/build/html/index.html
-
-
